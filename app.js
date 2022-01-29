@@ -11,6 +11,14 @@ function attachEvents() {
     submitBtn.addEventListener('click', weatherHandler)
 
     function weatherHandler() {
+        
+        if (divCurrentEl.children[0].textContent == 'Error') {
+
+            console.log('We have problem')
+            divUpcomingEl.style.display = 'block';
+            divCurrentEl.children[0].textContent='Current conditions';
+
+        }
 
         let forecastElements = Array.from(document.getElementsByClassName('forecast'));
         let forecastElementsPrev = Array.from(document.getElementsByClassName('forecast-info'));
